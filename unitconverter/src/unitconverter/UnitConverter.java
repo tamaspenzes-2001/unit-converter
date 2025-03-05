@@ -6,14 +6,14 @@ import java.util.Set;
 
 public class UnitConverter{
 	
-	private Map<String, Long> units;
+	private Map<String, Double> units;
 
 	public UnitConverter(String[] units){
 		this.units = new LinkedHashMap<>();
-		long multiplier = 1;
+		double multiplier = 1;
 		for (String unit: units) {
 			String[] unitArr = unit.split(":");
-			multiplier *= Long.parseLong(unitArr[1]);
+			multiplier *= Double.parseDouble(unitArr[1]);
 			this.units.put(unitArr[0], multiplier);
 		}
 	}
